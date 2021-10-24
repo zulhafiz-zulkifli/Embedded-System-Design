@@ -1,7 +1,7 @@
 #define SIZE 8
-const int LED_PINS[SIZE]={13,1,1,1,1,1,1,1};
-const int LED_ON[SIZE]={200,100,1,1,1,1,1,1};
-const int LED_OFF[SIZE]={2000,100,1,1,1,1,1,1};
+const int LED_PINS[SIZE]={6,7,8,9,10,11,12,13};
+const int LED_ON[SIZE]={781,2014,343,678,342,1478,1859,777};
+const int LED_OFF[SIZE]={515,1348,573,1839,534,326,351,888};
 struct LED{
 	int pin, on, off;
 	unsigned long current, prev;

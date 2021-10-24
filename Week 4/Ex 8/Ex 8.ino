@@ -1,54 +1,51 @@
-#define BTN1 2
-#define BTN2 3
-#define BTN3 4
-#define BTN4 5
-#define DEBOUNCE 100
+#define SIZE 4
+#define DEBOUNCE_DELAY 50
+const int LED_PINS[SIZE]={2,3,4,5};
 
-struct Millis{
-	unsigned long curr, prev;
-	int count = 0;
-};
-Millis b1, b2, b3, b4;
+
+struct Button{
+	int count = 0,pin;
+	unsigned long lastDebounceTime = 0;  // the last time the output pin was toggled
+	int lastSteadyState = LOW;       // the previous steady state from the input pin
+	int lastFlickerableState = LOW;  // the previous flickerable state from the input pin
+	int currentState;                // the current reading from the input pin
+}buttons[SIZE];
 
 void printState(){
-	Serial.print(b1.count);
-	Serial.print("\t");
-	Serial.print(b2.count);
-	Serial.print("\t");
-	Serial.print(b3.count);
-	Serial.print("\t");
-	Serial.println(b4.count);
+	for(int i=0;i<SIZE;i++){
+		if(i<SIZE-1){
+			Serial.print(buttons[i].count);
+			Serial.print("\t");			
+		}
+		else{
+			Serial.println(buttons[i].count);
+		}
+	}
 }
 
 void setup(){
 	Serial.begin(9600);
-	pinMode(BTN1, INPUT_PULLUP);
-	pinMode(BTN2, INPUT_PULLUP);
-	pinMode(BTN3, INPUT_PULLUP);
-	pinMode(BTN4, INPUT_PULLUP);
-	printState();
+	for(int i=0;i<SIZE;i++){
+		buttons[i].pin = LED_PINS[i];
+		pinMode(buttons[i].pin, INPUT_PULLUP);
+	}
 }
 
 void loop(){
-	b1.curr = millis();b2.curr = millis();b3.curr = millis();b4.curr = millis();
-	if(b1.curr-b1.prev>=DEBOUNCE){
-		b1.prev = b1.curr;
-		if(!digitalRead(BTN1)) b1.count++;
-		printState();
-	}
-	if(b2.curr-b2.prev>=DEBOUNCE){
-		b2.prev = b2.curr;
-		if(!digitalRead(BTN2)) b2.count++;
-		printState();
-	}
-	if(b3.curr-b3.prev>=DEBOUNCE){
-		b3.prev = b3.curr;
-		if(!digitalRead(BTN3)) b3.count++;
-		printState();
-	}
-	if(b4.curr-b4.prev>=DEBOUNCE){
-		b4.prev = b4.curr;
-		if(!digitalRead(BTN4)) b4.count++;
-		printState();
+	for(int i=0;i<SIZE;i++){
+		buttons[i].currentState = digitalRead(buttons[i].pin);
+		if (buttons[i].currentState != buttons[i].lastFlickerableState){
+			buttons[i].lastDebounceTime = millis();
+			buttons[i].lastFlickerableState = buttons[i].currentState;
+		}
+
+		if ((millis() - buttons[i].lastDebounceTime) > DEBOUNCE_DELAY){
+			if(buttons[i].lastSteadyState == HIGH && buttons[i].currentState == LOW)
+				buttons[i].count++;
+			else if(buttons[i].lastSteadyState == LOW && buttons[i].currentState == HIGH){
+				printState();
+			}
+			buttons[i].lastSteadyState = buttons[i].currentState;
+		}
 	}
 }

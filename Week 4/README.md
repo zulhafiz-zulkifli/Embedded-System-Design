@@ -5,8 +5,7 @@
 
 <details>
 <summary>VIDEO</summary>
-<img src="./Ex 7/Demo.mp4">
-[![Watch the video](./Ex 7/Circuit Diagram.PNG)](./Ex 7/Demo.mp4)
+<img src="https://youtu.be/PbuyJPiJtcE">
 </details>
 
 <details>
@@ -25,7 +24,7 @@ Button counters with debounce.
 
 <details>
 <summary>VIDEO</summary>
-<img src="./Ex 8/Demo.mp4">
+<img src="https://youtu.be/JJL-JmSL5pU">
 </details>
 
 <details>
@@ -44,7 +43,7 @@ Button counters with debounce.
 
 <details>
 <summary>VIDEO</summary>
-<img src="./Ex 9/Demo.mp4">
+<img src="https://youtu.be/OxGUM3Fc_LA">
 </details>
 
 <details>

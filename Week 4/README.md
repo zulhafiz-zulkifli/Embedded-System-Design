@@ -5,7 +5,7 @@
 
 <details>
 <summary>VIDEO</summary>
-https://youtu.be/JJL-JmSL5pU
+https://youtu.be/FABVb21UkPk
 </details>
 
 <details>
@@ -43,7 +43,7 @@ https://youtu.be/JJL-JmSL5pU
 
 <details>
 <summary>VIDEO</summary>
-https://youtu.be/JJL-JmSL5pU
+https://youtu.be/LCOVo3_k_PE
 </details>
 
 <details>

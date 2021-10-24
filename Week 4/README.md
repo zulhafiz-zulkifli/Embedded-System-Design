@@ -3,10 +3,23 @@
 
 2 LEDs with different ON and OFF timings.
 
+
+https://user-images.githubusercontent.com/45637352/138599636-b8b2275a-7b25-4c1b-baca-64447371f3d9.mp4
+
+
 <details>
 <summary>VIDEO</summary>
+<<<<<<< HEAD
 <img src="https://youtu.be/PbuyJPiJtcE">
+=======
+
+>>>>>>> 27d19c4d22e27a434df58a1d530f63f567b9b24f
 </details>
+
+
+
+
+
 
 <details>
 <summary>CIRCUIT DIAGRAM</summary>

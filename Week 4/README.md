@@ -5,13 +5,7 @@
 
 <details>
 <summary>VIDEO</summary>
-[![Demo W4E7](https://res.cloudinary.com/marcomontalbano/image/upload/v1635089281/video_to_markdown/images/youtube--PbuyJPiJtcE-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/PbuyJPiJtcE "Demo W4E7")
-
-<!-- blank line -->
-<figure class="video_container">
-  <iframe src="https://www.youtube.com/embed/enMumwvLAug" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
-<!-- blank line -->
+https://youtu.be/JJL-JmSL5pU
 </details>
 
 <details>
@@ -30,7 +24,7 @@ Button counters with debounce.
 
 <details>
 <summary>VIDEO</summary>
-<img src="https://youtu.be/JJL-JmSL5pU">
+https://youtu.be/JJL-JmSL5pU
 </details>
 
 <details>
@@ -49,7 +43,7 @@ Button counters with debounce.
 
 <details>
 <summary>VIDEO</summary>
-<img src="https://youtu.be/OxGUM3Fc_LA">
+https://youtu.be/JJL-JmSL5pU
 </details>
 
 <details>

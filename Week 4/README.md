@@ -5,7 +5,7 @@
 
 <details>
 <summary>VIDEO</summary>
-[![ ](https://img.youtube.com/vi/PbuyJPiJtcE/0.jpg)](https://www.youtube.com/watch?v=PbuyJPiJtcE)
+[![Demo]('./Ex 7/Prototype.jpg')](https://www.youtube.com/watch?v=PbuyJPiJtcE)
 </details>
 
 <details>

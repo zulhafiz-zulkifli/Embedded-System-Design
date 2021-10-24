@@ -3,9 +3,13 @@
 
 2 LEDs with different ON and OFF timings.
 
+
+https://user-images.githubusercontent.com/45637352/138599636-b8b2275a-7b25-4c1b-baca-64447371f3d9.mp4
+
+
 <details>
 <summary>VIDEO</summary>
-https://user-images.githubusercontent.com/45637352/138599349-a93be9db-bb78-4d02-9f56-567d9ad5703e.mp4
+
 </details>
 
 

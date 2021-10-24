@@ -5,9 +5,13 @@
 
 <details>
 <summary>VIDEO</summary>
-<img src="./Ex 7/Demo.mp4">
-[![Watch the video](./Ex 7/Circuit Diagram.PNG)](./Ex 7/Demo.mp4)
+https://user-images.githubusercontent.com/45637352/138599349-a93be9db-bb78-4d02-9f56-567d9ad5703e.mp4
 </details>
+
+
+
+
+
 
 <details>
 <summary>CIRCUIT DIAGRAM</summary>

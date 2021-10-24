@@ -5,7 +5,7 @@
 
 <details>
 <summary>VIDEO</summary>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PbuyJPiJtcE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Demo W4E7](https://res.cloudinary.com/marcomontalbano/image/upload/v1635089281/video_to_markdown/images/youtube--PbuyJPiJtcE-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://youtu.be/PbuyJPiJtcE "Demo W4E7")
 </details>
 
 <details>

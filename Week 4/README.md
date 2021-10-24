@@ -6,6 +6,7 @@
 <details>
 <summary>VIDEO</summary>
 <img src="./Ex 7/Demo.mp4">
+[![Watch the video](./Ex 7/Circuit Diagram.PNG)](./Ex 7/Demo.mp4)
 </details>
 
 <details>

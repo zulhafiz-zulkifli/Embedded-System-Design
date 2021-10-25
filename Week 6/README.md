@@ -17,16 +17,11 @@ PWM signal with 50% duty cycle on Channel B of timer0 (Fast PWM mode, pre-scaler
 PWM signal with 25% duty cycle on Channel A of timer1 (10-bit Phase Correct PWM-mode and pre-scalervalue of 8)
 
 <details>
-<summary>VIDEO</summary>
-<img src="">
-</details>
-
-<details>
 <summary>CIRCUIT DIAGRAM</summary>
-<img src="">
+<img src="./Circuit Diagram.PNG">
 </details>
 
 <details>
 <summary>PROTOTYPE</summary>
-<img src="">
+<img src="./Prototype.jpg">
 </details>

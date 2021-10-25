@@ -13,15 +13,15 @@ ADC application in continuously running mode (auto-trigger).
 
 <details>
 <summary>VIDEO</summary>
-<img src="">
+https://youtu.be/_wRWIbiqB-M
 </details>
 
 <details>
 <summary>CIRCUIT DIAGRAM</summary>
-<img src="">
+<img src="./Circuit Diagram.PNG">
 </details>
 
 <details>
 <summary>PROTOTYPE</summary>
-<img src="">
+<img src="./Prototype.jpg">
 </details>

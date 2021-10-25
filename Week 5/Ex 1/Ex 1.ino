@@ -1,14 +1,15 @@
-int value;
+#define POT_PIN A3
 
-void setup()
-{
-  pinMode(11, OUTPUT);
+void setup(){
   Serial.begin(9600);
 }
 
-void loop()
-{
-  value = analogRead(A0);
-  analogWrite (11, map(value, 0, 1023, 0, 255));
-  Serial.println(value);
+void loop(){
+  int value = analogRead(POT_PIN);
+  int led = map(value, 0, 1023, 0, 255);
+  analogWrite (3, led);
+  Serial.print("Potentiometer:");
+  Serial.print(value);
+  Serial.print(" , LED:");
+  Serial.println(led);
 }

@@ -5,7 +5,7 @@
 //Timer 2 OC2A - PB3 - Pin 11 Uno
 //Timer 2 OC2B - PD3 - Pin 3 Uno
 
-void setup() {
+void setup(){
   DDRD = 0b00100000;     //PD5 - Pin 5 Uno
   OCR0A = 5;             //top value is 5
   OCR0B = 2.5;           //50% duty cycle
@@ -13,5 +13,5 @@ void setup() {
   TCCR0B = 0b00000001;   //1 pre-scaler
 }
 
-void loop() {
+void loop(){
 }

@@ -9,11 +9,6 @@ Use Blinky class to generate PWM signal at PB5 with 200µs on and 300µs off tim
 Use Blinky class to generate PWM signal at PB5 with 100µs on and 200µs off time.
 
 <details>
-<summary>VIDEO</summary>
-...
-</details>
-
-<details>
 <summary>CIRCUIT DIAGRAM</summary>
 <img src="./Ex 3/Circuit Diagram.PNG">
 </details>

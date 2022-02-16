@@ -1,13 +1,15 @@
+//INCLUDE LIBRARIES
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 #include <EEPROM.h>
 #include <Tone.h>
+//DEFINE CONSTANTS
 #define PB_SIZES 6
 #define LED_SIZES 4
 #define MAX_LEVEL 5
 #define MAX_LEVEL_HARD 10
 #define DEBOUNCE_DELAY 10
-#define REFRESH_RATE 600
+//DEFINE COMPONENTS PIN
 #define RED_PB 2
 #define RED_LED 3
 #define GREEN_PB 4
@@ -19,6 +21,7 @@
 #define CHANGE_PB 10
 #define SELECT_PB 11
 #define BUZZER A3
+//DEFINE VARIABLES
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 Tone speakerpin;
 int LED_PINS[] = {RED_LED, GREEN_LED, YELLOW_LED, BLUE_LED};
@@ -38,6 +41,7 @@ bool hardMode = true;
 bool gameMode = false;
 bool gameStats = false;
 bool optionCursor = true;
+//FUNCTION PROTOTYPES
 void randomizeSequence();
 void playSequence();
 void printDisplay();
@@ -46,7 +50,7 @@ void saveStats();
 void playLoseSound();
 void playWinSound();
 
-
+//DEFINE BUTTON STRUCTURE FOR DEBOUNCE
 struct Button {
   unsigned long lastDebounceTime = 0;  // the last time the output pin was toggled
   int lastSteadyState = LOW;       // the previous steady state from the input pin
@@ -54,7 +58,7 @@ struct Button {
   int currentState;                // the current reading from the input pin
 } PB_STATES[PB_SIZES];
 
-
+//SETUP FUNCTION
 void setup() {
   loadStats();
   lcd.begin();
@@ -72,6 +76,7 @@ void setup() {
 
 }
 
+//MAIN LOOP
 void loop() {
   if (!gameOver && !gameComplete && gamePlaying) {
     playSequence();
@@ -175,19 +180,9 @@ void loop() {
             delay(250);
             digitalWrite(BUZZER, LOW);
           }
-          //
         }
         else if (PB_STATES[i].lastSteadyState == LOW && PB_STATES[i].currentState == HIGH) {
           digitalWrite(BUZZER, LOW);
-          if(i==4){
-            
-          }
-          else if(i==5 && optionCursor){
-
-          }
-          else if(i==5 && !optionCursor){
-            //
-          }
         }
         PB_STATES[i].lastSteadyState = PB_STATES[i].currentState;
       }
@@ -195,6 +190,7 @@ void loop() {
   }
 }
 
+//FUNCTION TO PRINT DISPLAY ON LCD
 void printDisplay() {
   if(gamePlaying){
     if (!gameOver && !gameComplete) {
@@ -257,6 +253,7 @@ void printDisplay() {
   }
 }
 
+//FUNCTION TO PLAY COLOR SEQUENCE
 void playSequence() {
   if(level==1) delay(1000);
   delay(1000);
@@ -271,6 +268,7 @@ void playSequence() {
   level_prev = level;
 }
 
+//FUNCTION TO RANDOMIZE COLOR SEQUENCE
 void randomizeSequence(){
   randomSeed(analogRead(0));
   for(int i=0; i<MAX_LEVEL_HARD;i++){
@@ -278,17 +276,19 @@ void randomizeSequence(){
   }
 }
 
+//FUNCTION TO LOAD STATS INTO EEPROM
 void loadStats(){
   EEPROM.get(0, high_score);
   EEPROM.get(sizeof(int), total_win);
 }
 
+//FUNCTION TO SAVE STATS INTO EEPROM
 void saveStats(){
   EEPROM.put(0, high_score);
   EEPROM.put(sizeof(int), total_win);
 }
 
-
+//FUNCTION TO PLAY LOSING SOUND
 void playLoseSound(){
   for (int i=0; i<=3; i++){
     digitalWrite(LED_PINS[0], HIGH);
@@ -306,22 +306,19 @@ void playLoseSound(){
   }
 }
 
+//FUNCTION TO PLAY WINNING SOUND
 void playWinSound(){
   int note[] = {NOTE_A4, NOTE_A4, NOTE_A4, NOTE_A4, NOTE_B4, NOTE_A4};
   int duration[] = {100, 100, 100, 300, 100, 300};
   for (int y=0; y<=2; y++){
-    //function for generating the array to be matched by the player
     digitalWrite(LED_PINS[0], HIGH);
     digitalWrite(LED_PINS[1], HIGH);
     digitalWrite(LED_PINS[2], HIGH);
     digitalWrite(LED_PINS[3], HIGH);
     delay(200);
     for(int thisNote = 0; thisNote < 6; thisNote ++){
-      // play the next note:
       speakerpin.play(note[thisNote]);
-      // hold the note:
       delay(duration[thisNote]);
-      // stop for the next note:
       speakerpin.stop();
       delay(25);
     }
